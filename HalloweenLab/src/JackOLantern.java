@@ -8,9 +8,12 @@ public class JackOLantern extends java.lang.Object{
     public void edit(java.lang.String replace, int row, int column){
         faceFeatures[row][column] = replace;
     }
-    public void fill(java.lang.String str)
-    {
-
+    public void fill(java.lang.String str) {
+        for (int i = 0; i < faceFeatures.length; i++) {
+            for (int j = 0; j < faceFeatures[i].length; j++) {
+                edit(str, i, j);
+            }
+        }
     }
     public java.lang.String toString()
     {
@@ -21,6 +24,7 @@ public class JackOLantern extends java.lang.Object{
             {
                 face += faceFeatures[i][x];
             }
+            face += "\n";
         }
         return face;
     }
